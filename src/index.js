@@ -1,17 +1,18 @@
-import React from 'react';
+// const element = document.createElement('h1');
+// element.innerText = 'Hello, Platzi Badge';
+
+// const container = document.getElementById('app');
+
+// container.appendChild(element);
+// ReactDOM.render(__qué_realiza__, __dondé_lo_realizará)
+ 
+import React from 'react'; //Obligatorio para agregar el JSX.
+
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const element = <h1> Hello, Platzi Badge </h1>; //JSX permite que el h1 funcione en javascript
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const container = document.getElementById('app');
+
+ReactDOM.render(element, container);
+
