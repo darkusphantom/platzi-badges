@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./global.css";
-import Badge from "./components/Badge";
-import PhotoProfile from "./images/photo.jpg";
+//import Badge from "./components/Badge";
+//import PhotoProfile from "./images/photo.jpg";
+import BadgeNew from "./pages/BadgeNew";
 
 const container = document.getElementById("app");
-
-ReactDOM.render(
+/*
   <Badge
     firstName="Luis"
     lastName="Rodriguez"
@@ -16,5 +16,6 @@ ReactDOM.render(
     user_twitter="WitcherPhantom"
     url_avatar={PhotoProfile}
   />,
-  container
-);
+  */
+
+ReactDOM.render(<BadgeNew />, container);
