@@ -8,6 +8,25 @@ import Badge from "../components/Badge";
 import PhotoProfile from "../images/photo.jpg";
 
 class BadgeNew extends React.Component {
+  state = {
+    form: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      jobTitle: '',
+      twitter: '',
+    },
+  };
+
+  handleChange = (event) => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [event.target.name]: event.target.value,
+      },
+    });
+  };
+
   render() {
     return (
       <div>
@@ -19,15 +38,18 @@ class BadgeNew extends React.Component {
           <div className="row">
             <div className="col-6">
               <Badge
-                firstName="Luis"
-                lastName="Rodriguez"
-                jobTitle="FrontEnd Developer"
-                user_twitter="WitcherPhantom"
+                firstName={this.state.form.firstName}
+                lastName={this.state.form.lastName}
+                jobTitle={this.state.form.jobTitle}
+                user_twitter={this.state.form.twitter}
                 url_avatar={PhotoProfile}
               />
             </div>
             <div className="col-6">
-              <BadgeForm />
+              <BadgeForm
+                onChange={this.handleChange}
+                formValues={this.state.form}
+              />
             </div>
           </div>
         </div>
