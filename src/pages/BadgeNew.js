@@ -1,7 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import "./styles/BadgeNew.css";
-import NavBar from "../components/NavBar";
 import header from "../images/badge-header.svg";
 import BadgeForm from "../components/BadgeForm";
 import Badge from "../components/Badge";
@@ -10,11 +9,11 @@ import PhotoProfile from "../images/photo.jpg";
 class BadgeNew extends React.Component {
   state = {
     form: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      jobTitle: '',
-      twitter: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      jobTitle: "",
+      twitter: "",
     },
   };
 
@@ -29,8 +28,7 @@ class BadgeNew extends React.Component {
 
   render() {
     return (
-      <div>
-        <NavBar />
+      <Fragment>
         <div className="BadgeNew__hero">
           <img className="img-fluid" src={header} alt="Logo" />
         </div>
@@ -53,7 +51,7 @@ class BadgeNew extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

@@ -18,7 +18,7 @@ class BadgeForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label for="firstname">First Name</label>
+            <label htmlFor="firstname">First Name</label>
             <input
               onChange={this.props.onChange}
               type="text"
@@ -30,7 +30,7 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="lastname">Last Name</label>
+            <label htmlFor="lastname">Last Name</label>
             <input
               onChange={this.props.onChange}
               type="text"
@@ -42,7 +42,7 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               onChange={this.props.onChange}
               type="email"
@@ -54,7 +54,7 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="jobtitle">Job Title</label>
+            <label htmlFor="jobtitle">Job Title</label>
             <input
               onChange={this.props.onChange}
               type="text"
@@ -66,7 +66,7 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="twitter">Twitter</label>
+            <label htmlFor="twitter">Twitter</label>
             <input
               onChange={this.props.onChange}
               type="text"
@@ -80,7 +80,7 @@ class BadgeForm extends React.Component {
           <button
             onClick={this.handleClick}
             type="submit"
-            class="btn btn-primary"
+            className="btn btn-primary"
           >
             Save
           </button>
