@@ -77,6 +77,18 @@ class BadgeForm extends React.Component {
             />
           </div>
 
+          <div className="form-group">
+            <label htmlFor="photo">Agrega una foto</label>
+            <input
+              onChange={this.props.onChange}
+              type="file"
+              accept=".jpg,.png"
+              id="photo"
+              name="photo"
+              value={this.props.formValues.photo}
+            />
+          </div>
+
           <button
             onClick={this.handleClick}
             type="submit"
