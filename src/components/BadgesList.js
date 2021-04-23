@@ -1,26 +1,51 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import "./styles/BadgesList.css";
 
-class BadgesList extends Component {
+class BadgesListItem extends React.Component {
   render() {
+    return (
+      <div className="BadgesListItem">
+        <img
+          className="BadgesListItem__avatar"
+          src={this.props.badge.avatarUrl}
+          alt={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
+        />
+
+        <div>
+          <strong>
+            {this.props.badge.firstName} {this.props.badge.lastName}
+          </strong>
+          <br />@{this.props.badge.twitter}
+          <br />
+          {this.props.badge.jobTitle}
+        </div>
+      </div>
+    );
+  }
+}
+
+class BadgesList extends React.Component {
+  render() {
+    if (this.props.badges.length === 0) {
+      return (
+        <div>
+          <h3>No badges were found</h3>
+          <Link className="btn btn-primary" to="/badges/new">
+            Create new badge
+          </Link>
+        </div>
+      );
+    }
+
     return (
       <div className="BadgesList">
         <ul className="list-unstyled">
           {this.props.badges.map((badge) => {
             return (
-              <li className="BadgesListItem" key={badge.id}>
-                <div className="ItemPhoto">
-                  <img src={badge.avatarUrl} alt="Photo Badge" />
-                </div>
-                <p className="ItemName">
-                  {badge.firstName} {badge.lastName}
-                </p>
-                <div className="ItemTwitter">
-                  <img className="twitterIcon" alt="Icon Twitter" />
-                  <a className="twitterUser">@{badge.twitter}</a>
-                </div>
-                <p className="ItemJobTitle">{badge.jobTitle}</p>
+              <li key={badge.id}>
+                <BadgesListItem badge={badge} />
               </li>
             );
           })}
