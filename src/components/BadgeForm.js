@@ -7,16 +7,10 @@ class BadgeForm extends React.Component {
     console.log("Under Pressure");
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Form was stopped");
-    console.log(this.state);
-  };
-
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label htmlFor="firstname">First Name</label>
             <input
