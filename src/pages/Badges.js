@@ -23,7 +23,7 @@ class Badges extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(intervalId);
+    clearInterval(this.intervalId);
   }
 
   fetchData = async () => {
